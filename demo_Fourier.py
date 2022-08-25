@@ -5,7 +5,7 @@ import time
 
 # animate the Fourier approximation
 def plotAnimFourier(case,L,n,delay):
-    # plots the function and all its Fourier approx
+    # plots the function and its all Fourier approx
     # such that 0<=j<=n
     for j in np.arange(n+1):
         plotFourier(case,L,j)
@@ -44,7 +44,7 @@ def plotFourier(case,L,n):
     plt.plot(x,fsum,color='red',linewidth='1.5',label='Fourier series')
     plt.legend()
 
-# compute the Fourier coefficients using Simpson's quadrature
+# compute the Fourier coefficients
 def fourierCoeffs(case,L,n):
     f = funcgen(case)
     eps = 1E-14
@@ -165,6 +165,12 @@ def funcgen(case):
             return np.abs(x)
         return f
     
+if __name__=='__main__':
+    case = 'wiggly'
+    L = np.pi
+    n = 25
+    delay = 1/16
+    plotAnimFourier(case,L,n,delay)
 
 
         
