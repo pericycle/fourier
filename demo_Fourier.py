@@ -2,10 +2,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 
+'''
+Convergence of Fourier series demonstration.
+
+'''
 
 # animate the Fourier approximation
 def plotAnimFourier(case,L,n,delay):
-    # plots the function and its all Fourier approx
+    # plots the function and all Fourier approximations
     # such that 0<=j<=n
     for j in np.arange(n+1):
         plotFourier(case,L,j)
@@ -92,6 +96,7 @@ def simpson(f,a,b,n):
         k+=1;
     return integral
 
+# functions to be approximated
 def funcgen(case):
     if case=='jump':
         def f(x):
